@@ -8,17 +8,30 @@
     scroll-behavior: smooth;
 }
 
+$min-tablet: 768px;
+
+@mixin tablet{
+    @media (min-width: #{$min-tablet}) {
+        @content
+    }
+}
+
 p, a{font-weight: 500;}
 h1{font-weight: 800;}
 p{color: #767676;}
 img{display: block; width: 100%;}
 #home, #projects, #contact{height: 100%;} 
 button{background: transparent; border: none;}
+button{cursor: pointer;}
 body{
     background-color: #F8F8F8;
     height: 100vh;
     display: flex;
     flex-direction: column;
+    @include tablet{
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+    }
 }
 .bodyActive{
     overflow: hidden;
@@ -34,6 +47,9 @@ aside{
     background-color: white;
     height: 85px;
     flex-shrink: 0;
+    @include tablet{
+        height: 100%;
+    }
     nav, ul{
         height: 100%;
     }
@@ -41,13 +57,26 @@ aside{
         display: flex;
         align-items: center;
         justify-content: center;
+        @include tablet{
+            flex-direction: column;
+        }
     } 
     li{
         font-size: 1.3rem;
-        a{color: black;}
+        a{
+            color: black;
+            transition: all .3s ease-in-out;
+            &:hover{
+                letter-spacing: 2px;
+            }
+        }
     }
     li + li{
         margin-left: 1rem;
+        @include tablet{
+            margin-left: 0;
+            margin-top: 1rem;
+        }
     }
 }
 
@@ -85,9 +114,15 @@ main{
             overflow: scroll;
             margin-top: 2rem;
             ul{
-                height: 100%; 
+                height: fit-content; 
+                @include tablet{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2rem;
+                }
                 li{
                     border: 2.5px solid black;
+                    height: fit-content;
                     img{width: 100%;}
                     button{
                         border: none;
@@ -95,6 +130,9 @@ main{
                 }
                 li + li{
                     margin-top: 2rem;
+                    @include tablet{
+                        margin: 0;
+                    }
                 }
             }
         }
@@ -122,11 +160,16 @@ main{
                 }
                 #pop-up-grid{
                     display: grid;
-                    //grid-template-columns: 1fr 2fr;
                     padding: 2rem;
                     gap: 3rem;
+                    @include tablet{
+                        grid-template-columns: 1fr 1fr;
+                    }
                     #modal-img{
                         border: 2.5px solid black;
+                        @include tablet{
+                            height: fit-content;
+                        }
                     }
                     #text{
                         text-align: left;
@@ -176,6 +219,7 @@ main{
             top: 50%;
             transform: translateY(-50%);
             text-align: center;
+            width: 100%;
 
             a{
                 text-decoration: underline;
