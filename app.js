@@ -42,7 +42,7 @@ const projects = {
         website: 'https://nmukassa1.github.io/movie-directory/',
         img: './assets/movie-directory.jpeg',
         alt: 'movie directory site',
-        overview: `For me, finding a great movie to watch has been more and more difficult to solve with the forever rise of superhero movies. So to have a go and solve that issue, I wanted to create my own clone of www.tmdb.com that'll help solve this issue. Using www.tmdb.com Api's, I was able to allow people to find things to watch, find a few information on what they want to watch as well as add them to their favourites.`,
+        overview: `Using "www.tmdb.com" API, I was able to create a directory where people can find an array of movies and shows, filter them through genre and even add their favourite shows to their favourite's page`,
         tools: ['HTML', 'SCSS', 'JAVASCRIPT, API']
     }
 };
