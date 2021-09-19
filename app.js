@@ -1,14 +1,14 @@
 //Projects
 const projects = {
-    bookmark: {
-        name: 'bookmark',
-        github: 'https://github.com/nmukassa1/bookmark',
-        website: 'https://nmukassa1.github.io/bookmark/',
-        img: './assets/bookmark copy.jpeg',
-        alt: 'bookmark site',
-        overview: 'A simple one page site consisting of an Accordion feature and email validation. (Project sourced from Frontend Mentor)',
-        tools: ['HTML', 'SCSS', 'JAVASCRIPT']
-    },
+//     bookmark: {
+//         name: 'bookmark',
+//         github: 'https://github.com/nmukassa1/bookmark',
+//         website: 'https://nmukassa1.github.io/bookmark/',
+//         img: './assets/bookmark copy.jpeg',
+//         alt: 'bookmark site',
+//         overview: 'A simple one page site consisting of an Accordion feature and email validation. (Project sourced from Frontend Mentor)',
+//         tools: ['HTML', 'SCSS', 'JAVASCRIPT']
+//     },
     photosnap: {
         name: 'photosnap',
         github: 'https://github.com/nmukassa1/photosnap',
@@ -27,15 +27,15 @@ const projects = {
         overview: `Wanting to put my skills to the test once more after creating a 4-page site. This here is a 7-page site that containts an email form on the 'contact' page. (Project sourced from Frontend Mentor)`,
         tools: ['HTML', 'SCSS', 'JAVASCRIPT']
     },
-    bespoke: {
-        name: 'bespoke',
-        github: 'https://github.com/nmukassa1/bespoke/settings/pages',
-        website: 'https://nmukassa1.github.io/bespoke/',
-        img: './assets/bespoke.jpeg',
-        alt: 'bespoke site',
-        overview: 'A hypothetical interior design company whose design I replecated from taylorhowes.co.uk.',
-        tools: ['HTML', 'SCSS', 'JAVASCRIPT']
-    },
+//     bespoke: {
+//         name: 'bespoke',
+//         github: 'https://github.com/nmukassa1/bespoke/settings/pages',
+//         website: 'https://nmukassa1.github.io/bespoke/',
+//         img: './assets/bespoke.jpeg',
+//         alt: 'bespoke site',
+//         overview: 'A hypothetical interior design company whose design I replecated from taylorhowes.co.uk.',
+//         tools: ['HTML', 'SCSS', 'JAVASCRIPT']
+//     },
     movieDirectory: {
         name: 'movieDirectory',
         github: 'https://github.com/nmukassa1/movie-directory',
