@@ -42,7 +42,7 @@ const projects = {
         website: 'https://nmukassa1.github.io/movie-directory/',
         img: './assets/movie-directory.jpeg',
         alt: 'movie directory site',
-        overview: `Using "www.tmdb.com" API, I was able to create a directory where people can find an array of movies and shows, filter them through genre and even add their favourite shows to their favourite's page`,
+        overview: `Using "www.tmdb.com" API, I was able to create a directory where people can find an array of movies and shows, filter them through genre and even add them to their favourite's page`,
         tools: ['HTML', 'SCSS', 'JAVASCRIPT, API']
     }
 };
