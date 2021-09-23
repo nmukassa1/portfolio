@@ -1,14 +1,14 @@
 //Projects
 const projects = {
-//     bookmark: {
-//         name: 'bookmark',
-//         github: 'https://github.com/nmukassa1/bookmark',
-//         website: 'https://nmukassa1.github.io/bookmark/',
-//         img: './assets/bookmark copy.jpeg',
-//         alt: 'bookmark site',
-//         overview: 'A simple one page site consisting of an Accordion feature and email validation. (Project sourced from Frontend Mentor)',
-//         tools: ['HTML', 'SCSS', 'JAVASCRIPT']
-//     },
+    // bookmark: {
+    //     name: 'bookmark',
+    //     github: 'https://github.com/nmukassa1/bookmark',
+    //     website: 'https://nmukassa1.github.io/bookmark/',
+    //     img: './assets/bookmark copy.jpeg',
+    //     alt: 'bookmark site',
+    //     overview: 'A simple one page site consisting of an Accordion feature and email validation. (Project sourced from Frontend Mentor)',
+    //     tools: ['HTML', 'SCSS', 'JAVASCRIPT']
+    // },
     photosnap: {
         name: 'photosnap',
         github: 'https://github.com/nmukassa1/photosnap',
@@ -27,22 +27,31 @@ const projects = {
         overview: `Wanting to put my skills to the test once more after creating a 4-page site. This here is a 7-page site that containts an email form on the 'contact' page. (Project sourced from Frontend Mentor)`,
         tools: ['HTML', 'SCSS', 'JAVASCRIPT']
     },
-//     bespoke: {
-//         name: 'bespoke',
-//         github: 'https://github.com/nmukassa1/bespoke/settings/pages',
-//         website: 'https://nmukassa1.github.io/bespoke/',
-//         img: './assets/bespoke.jpeg',
-//         alt: 'bespoke site',
-//         overview: 'A hypothetical interior design company whose design I replecated from taylorhowes.co.uk.',
-//         tools: ['HTML', 'SCSS', 'JAVASCRIPT']
-//     },
+    drone: {
+        name: 'drone',
+        github: 'https://github.com/nmukassa1/drone',
+        website: 'https://nmukassa1.github.io/drone/',
+        img: './assets/drone.jpeg',
+        alt: 'drone site',
+        overview: `N/A`,
+        tools: ['HTML', 'SCSS', 'JAVASCRIPT']
+    },
+    // bespoke: {
+    //     name: 'bespoke',
+    //     github: 'https://github.com/nmukassa1/bespoke/settings/pages',
+    //     website: 'https://nmukassa1.github.io/bespoke/',
+    //     img: './assets/bespoke.jpeg',
+    //     alt: 'bespoke site',
+    //     overview: 'A hypothetical interior design company whose design I replecated from taylorhowes.co.uk.',
+    //     tools: ['HTML', 'SCSS', 'JAVASCRIPT']
+    // },
     movieDirectory: {
         name: 'movieDirectory',
         github: 'https://github.com/nmukassa1/movie-directory',
         website: 'https://nmukassa1.github.io/movie-directory/',
         img: './assets/movie-directory.jpeg',
         alt: 'movie directory site',
-        overview: `Using "www.tmdb.com" API, I was able to create a directory where people can find an array of movies and shows, filter them through genre and even add them to their favourite's page`,
+        overview: `For me, finding a great movie to watch has been more and more difficult to solve with the forever rise of superhero movies. So to have a go and solve that issue, I wanted to create my own clone of www.tmdb.com that'll help solve this issue. Using www.tmdb.com Api's, I was able to allow people to find things to watch, find a few information on what they want to watch as well as add them to their favourites.`,
         tools: ['HTML', 'SCSS', 'JAVASCRIPT, API']
     }
 };
