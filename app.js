@@ -53,6 +53,15 @@ const projects = {
         alt: 'movie directory site',
         overview: `For me, finding a great movie to watch has been more and more difficult to solve with the forever rise of superhero movies. So to have a go and solve that issue, I wanted to create my own clone of www.tmdb.com that'll help solve this issue. Using www.tmdb.com Api's, I was able to allow people to find things to watch, find a few information on what they want to watch as well as add them to their favourites.`,
         tools: ['HTML', 'SCSS', 'JAVASCRIPT, API']
+    },
+    spotifyClone: {
+        name: 'spotifyClone',
+        github: 'https://github.com/nmukassa1/spotifyclone',
+        website: 'https://nmukassa1.github.io/spotifyclone/',
+        img: './assets/spotifyClone.png',
+        alt: 'spotify clone site',
+        overview: `A clone of Spotify desktop site with the ability to play, pause, select and skip songs.`,
+        tools: ['HTML', 'SCSS', 'JAVASCRIPT']
     }
 };
 
