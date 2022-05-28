@@ -140,5 +140,8 @@ img {
   .project + .project {
     margin-top: 40px;
   }
+  img {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
