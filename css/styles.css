@@ -46,13 +46,15 @@ main > p {
 main {
   width: 100vw;
   height: 100vh;
+  overflow: scroll;
 }
 
 header {
   height: 80px;
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  background: black;
+  top: -1px;
   left: 0;
 }
 
@@ -117,5 +119,26 @@ img {
 #portfolio {
   overflow: scroll;
   padding: 40px;
+}
+
+@media (max-width: 414px) {
+  #intro, #why, #why-2 {
+    width: 99%;
+  }
+  nav {
+    gap: 100px;
+  }
+  .project, .project:nth-child(even) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .project-info {
+    text-align: center;
+  }
+  .project + .project {
+    margin-top: 40px;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
