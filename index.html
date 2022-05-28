@@ -6,103 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nyah Mukassa</title>
 
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="syles.css">
-
     <!-- FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;800&display=swap" rel="stylesheet">
-    
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- JQUERY -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <link rel="stylesheet" href="css/styles.css">
 
 </head>
 <body>
     
-    <aside>
-        <nav>
-            <ul>
-                <li><a id="" href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </aside>
+    <!-- <div id="loader">
+        <p></p>
+    </div> -->
 
-    <main class="container">
-        <!-- HOME -->
-        <section id="home">
-            <div class="wrapper">
-                <div class="title">
-                    <h1>Nyah Mukassa</h1>
-                </div>
-                <div class="msg">
-                    <p>
-                        Front End Web Developer living in London with a tech stack of; HTML, SCSS & JAVASCRIPT.
-                    </p>
-                </div>
-            </div>
-        </section>
-        <!-- PROJECTS -->
-        <section id="projects">
-            <div class="title">
-                <h1>Projects</h1>
-            </div>
+  
+    <p id="intro">The name's Nyah <br> A self taught web developer</p>
+    <p id="why">
+        Why Web Development:
+        <br>
+        I’ve gotten into web development during lockdown after not knowing what I wanted to do with myself for a long time, until my sister started to learn web development, and I for curiosity sakes, fell down the rabit hole.
+    </p>
+    <p id="why-2">
+        Why Web Development:
+        <br>
+        Leading me all over the internet to learn and really understand web development by reading and watching a ton of things, and building my own projects.
+    </p>
 
-            <div id="projects__container">
-                <ul>
-                    
-                </ul>
-            </div>
+    <main>
+        <header>
+            <nav>
+                <button class="nav-btn nav-btn__active">Portfolio</button>
+                <button class="nav-btn">Contact</button>
+            </nav>
+        </header>
 
-            <!-- MODAL -->
-            <div id="modal">
-                <div id="pop-up">
-                    <div id="close-container">
-                        <button id="close">
-                            <img src="./assets/icon-close.svg" alt="">
-                        </button>
-                    </div>
-                    <div id="pop-up-grid">
-                        <div id="modal-img">
-                            <img src="" alt="">
-                        </div>
-                        <div id="text">
-                            <div id="overview">
-                                <h1>overview</h1>
-                                <p></p>
-                            </div>
-                            <div id="flex-bottom">
-                                <div id="tools-used">
-                                    <h2>Tools used</h2>
-                                    <p></p>
-                                </div>
-                                <div id="icons">
-                                    <a target="_blank" id="web" href=""><i class="fas fa-eye"></i></a>
-                                    <a target="_blank" id="github" href=""><i class="fab fa-github"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <section id="portfolio" class="contain">
+            <!-- <div class="project">
+                <img src="assets/movie-directory.jpg" alt="">
+                <div id="project-info">
+                    <h1 id="project-name">Movie Directory</h1>
+                    <p id="project-bio">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam reprehenderit earum doloremque impedit distinctio quis nobis veritatis</p>
+                    <span id="project-tools"></span>
+                    <a target="_blank" href="https://nmukassa1.github.io/movie-directory/">View Project</a>
                 </div>
-            </div>
+            </div> -->
         </section>
-        <!-- CONTACT -->
-        <section id="contact">
-            <div class="title">
-                <h1>Contact</h1>
-            </div>
-            <p>
-                To get in contact with any enquiries, please email me at:
-                <br>
-                <a href="mailto: nmukassa1@gmail.com">nmukassa1@gmail.com</a>
-            </p>
-        </section>
+
     </main>
+    
 
 
-    <script src="app.js"></script>
+    <script src="script/app.js"></script>
 </body>
 </html>
