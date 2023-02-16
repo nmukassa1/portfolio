@@ -10,8 +10,8 @@ function App() {
       <div className="App text-white p-5">
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/project" element={<ViewAllProject/>} />
-          <Route path="/project/:projectName" element={<ProjectPage />}/>
+          {/* <Route path="/project" element={<ViewAllProject/>} />
+          <Route path="/project/:projectName" element={<ProjectPage />}/> */}
         </Routes>
       </div>
     </HashRouter>
