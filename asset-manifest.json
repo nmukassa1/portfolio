@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.5fa937dc.css",
-    "main.js": "/portfolio/static/js/main.abfcf8e0.js",
-    "static/js/787.28cb0dcd.chunk.js": "/portfolio/static/js/787.28cb0dcd.chunk.js",
-    "static/media/movie-info.png": "/portfolio/static/media/movie-info.3540d8351ba1b9bc96c1.png",
-    "static/media/unwind-home.png": "/portfolio/static/media/unwind-home.e2abdd76d0e60988d5c4.png",
-    "static/media/book-page.png": "/portfolio/static/media/book-page.5b758cde0b023b0e1ba5.png",
-    "static/media/shopping-cart.png": "/portfolio/static/media/shopping-cart.292cb740e98c0e768ead.png",
-    "static/media/spotify.png": "/portfolio/static/media/spotify.3e96f174d2454026d1a4.png",
-    "static/media/empty-shopping-cart.png": "/portfolio/static/media/empty-shopping-cart.d135166560f7e02b0192.png",
-    "index.html": "/portfolio/index.html",
-    "main.5fa937dc.css.map": "/portfolio/static/css/main.5fa937dc.css.map",
-    "main.abfcf8e0.js.map": "/portfolio/static/js/main.abfcf8e0.js.map",
-    "787.28cb0dcd.chunk.js.map": "/portfolio/static/js/787.28cb0dcd.chunk.js.map"
+    "main.css": "/www.nyahmukassa.com/static/css/main.5fa937dc.css",
+    "main.js": "/www.nyahmukassa.com/static/js/main.fe5ac4f7.js",
+    "static/js/787.28cb0dcd.chunk.js": "/www.nyahmukassa.com/static/js/787.28cb0dcd.chunk.js",
+    "static/media/movie-info.png": "/www.nyahmukassa.com/static/media/movie-info.3540d8351ba1b9bc96c1.png",
+    "static/media/unwind-home.png": "/www.nyahmukassa.com/static/media/unwind-home.e2abdd76d0e60988d5c4.png",
+    "static/media/book-page.png": "/www.nyahmukassa.com/static/media/book-page.5b758cde0b023b0e1ba5.png",
+    "static/media/shopping-cart.png": "/www.nyahmukassa.com/static/media/shopping-cart.292cb740e98c0e768ead.png",
+    "static/media/spotify.png": "/www.nyahmukassa.com/static/media/spotify.3e96f174d2454026d1a4.png",
+    "static/media/empty-shopping-cart.png": "/www.nyahmukassa.com/static/media/empty-shopping-cart.d135166560f7e02b0192.png",
+    "index.html": "/www.nyahmukassa.com/index.html",
+    "main.5fa937dc.css.map": "/www.nyahmukassa.com/static/css/main.5fa937dc.css.map",
+    "main.fe5ac4f7.js.map": "/www.nyahmukassa.com/static/js/main.fe5ac4f7.js.map",
+    "787.28cb0dcd.chunk.js.map": "/www.nyahmukassa.com/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5fa937dc.css",
-    "static/js/main.abfcf8e0.js"
+    "static/js/main.fe5ac4f7.js"
   ]
 }
