@@ -55,6 +55,9 @@ function Projects() {
   };
 
   const handleRowPadding = (e: React.MouseEvent) => {
+    // Skip on touch devices (mobile/iPad)
+    if (navigator.maxTouchPoints > 0) return;
+
     const firstChildElement = e.currentTarget.firstChild as HTMLElement;
     const isEntered = e.type === "mouseenter";
     if (firstChildElement && firstChildElement.classList) {
