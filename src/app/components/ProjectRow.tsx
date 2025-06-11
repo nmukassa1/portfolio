@@ -43,6 +43,7 @@ const ProjectRow: FC<Props> = ({
         <div className="text-right py-2">{project.year}</div>
       </div>
 
+      {/* Project details */}
       <div
         className={`transition-all overflow-hidden ease-in-out duration-300 ${
           selectedProject === project.id
@@ -67,14 +68,6 @@ const ProjectRow: FC<Props> = ({
           >
             Visit Site
           </Link>
-        </div>
-
-        <div className="flex flex-col sm:flex-row gap-2 mt-8">
-          {Array.from({ length: 3 }, (_, i) => (
-            <div key={i} className=" bg-gray-200 shrink-0 grow-1 h-[200px] ">
-              {/* Image */}
-            </div>
-          ))}
         </div>
       </div>
     </div>

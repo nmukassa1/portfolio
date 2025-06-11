@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import {
-  motion,
   useMotionValue,
   useSpring,
   useTransform,
@@ -14,45 +13,41 @@ type Project = {
   id: number;
   name: string;
   year: number;
-  techStack?: string;
-  img?: string;
+  previewImage: string | undefined;
+  description?: string;
+  link?: string;
 };
 
 const projects: Project[] = [
   {
     id: 1,
     name: "Designspo",
-    techStack: "Nextjs, React, Express, Supabase, Chrome Api",
     year: 2025,
-    img: "red",
+    previewImage: "/designspo.png",
   },
   {
     id: 2,
     name: "Unwind",
-    techStack: "React, Json Database",
     year: 2023,
-    img: "blue",
+    previewImage: "/unwind.png",
   },
   {
     id: 3,
     name: "Top 20",
-    techStack: "React, Tailwind, 3rd Party Api",
     year: 2022,
-    img: "beige",
+    previewImage: "/movieApp.png",
   },
   {
     id: 4,
     name: "Spotify Clone",
-    techStack: "HTML, Css, Vanilla js",
     year: 2022,
-    img: "pink",
+    previewImage: "/spotifyClone.png",
   },
   {
     id: 5,
     name: "Photosnap",
-    techStack: "HTML, Css, Vanilla js",
     year: 2021,
-    img: "yellow",
+    previewImage: "/photosnap.png",
   },
 ];
 
@@ -76,8 +71,8 @@ function Projects() {
       : el.classList.remove("px-4");
   };
 
-  const findProjectById = (id: number | null) => {
-    return projects.find((p) => p.id === id)?.img || "transparent";
+  const findPreviewImageById = (id: number | null) => {
+    return projects.find((p) => p.id === id)?.previewImage || undefined;
   };
 
   const mouseX = useMotionValue(0);
@@ -112,7 +107,8 @@ function Projects() {
         top={springY}
         skewX={skewX}
         skewY={skewY}
-        bgColor={findProjectById(hoveredProject)}
+        // bgColor={findPreviewImageById(hoveredProject)}
+        previewImage={findPreviewImageById(hoveredProject)}
       />
 
       {projects.map((project) => (

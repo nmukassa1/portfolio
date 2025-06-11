@@ -9,7 +9,8 @@ type Props = {
   top: MotionValue<number>;
   skewX: MotionValue<number>;
   skewY: MotionValue<number>;
-  bgColor: string;
+  // bgColor: string;
+  previewImage: string | undefined;
 };
 
 const ImagePreview: FC<Props> = ({
@@ -19,24 +20,32 @@ const ImagePreview: FC<Props> = ({
   top,
   skewX,
   skewY,
-  bgColor,
+  // bgColor,
+  previewImage = undefined,
 }) => {
   if (!show) return null;
 
   return (
     <motion.div
-      className="w-[300px] h-[200px] fixed pointer-events-none z-50"
+      className="w-[500px] h-[300px] fixed pointer-events-none z-50 "
       style={{
         left,
         top,
         opacity: imageOpacity,
         skewX,
         skewY,
-        backgroundColor: bgColor,
+        // backgroundColor: bgColor,
         borderRadius: "30px",
       }}
       transition={{ type: "spring", stiffness: 300, damping: 40 }}
-    />
+    >
+      <motion.img
+        src={previewImage}
+        alt="Preview"
+        className="w-full h-full object-cover rounded-[30px]"
+        style={{ opacity: imageOpacity }}
+      />
+    </motion.div>
   );
 };
 
