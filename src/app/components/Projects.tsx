@@ -49,6 +49,7 @@ const projects = [
 function Projects() {
   const [selectedProject, setSelectedProject] = useState<null | number>(null);
   const [hoveredProject, setHoveredProject] = useState<null | number>(null);
+  console.log(99);
 
   const handleProjectClick = (id: number) => {
     setSelectedProject((prev) => (prev === id ? null : id));
