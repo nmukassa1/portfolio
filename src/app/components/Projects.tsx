@@ -2,12 +2,6 @@
 import { Ultra } from "next/font/google";
 import { useEffect, useState } from "react";
 
-const ultra = Ultra({
-  weight: "400", // Ultra only has one weight
-  subsets: ["latin"],
-  display: "swap",
-});
-
 const projects = [
   {
     id: 1,
@@ -69,6 +63,7 @@ function Projects() {
   const handleRowPadding = (e: React.MouseEvent) => {
     const firstChildElement = e.currentTarget.firstChild as HTMLElement;
     const isEntered = e.type === "mouseenter";
+    console.log("Row padding event:", isEntered);
 
     if (firstChildElement && firstChildElement.classList) {
       if (isEntered) {
@@ -78,6 +73,10 @@ function Projects() {
       }
     }
   };
+
+  useEffect(() => {
+    console.log("Image opacity changed:", imageOpacity);
+  }, [imageOpacity, imagePosition]);
 
   return (
     <section
@@ -95,7 +94,7 @@ function Projects() {
 
       {/* Image Preview Box */}
       <div
-        className={`w-[${imageSize.width}px] h-[${imageSize.height}px] bg-black fixed  pointer-events-none transition-transform duration-100  ease-in-out`}
+        className={`w-[300px] h-[200px] bg-black fixed  pointer-events-none transition-transform duration-100  ease-in-out`}
         style={{
           top: `${imagePosition.y}px`,
           left: `${imagePosition.x}px`,
