@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
 
@@ -6,8 +7,9 @@ type Project = {
   id: number;
   name: string;
   year: number;
-  techStack?: string;
-  img?: string;
+  previewImage: string | undefined;
+  description?: string;
+  link: string;
 };
 
 type Props = {
@@ -46,28 +48,26 @@ const ProjectRow: FC<Props> = ({
       {/* Project details */}
       <div
         className={`transition-all overflow-hidden ease-in-out duration-300 ${
-          selectedProject === project.id
-            ? "max-h-[1000px] pt-2 mb-4 "
-            : "max-h-0"
+          selectedProject === project.id ? "max-h-[1000px] pb-6 " : "max-h-0"
         }`}
       >
         <h2 className="sm:w-3/4 text-lg lg:text-4xl">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
-          fuga sequi tenetur doloribus. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Explicabo fuga sequi tenetur doloribus. Lorem ipsum
-          dolor sit amet consectetur adipisicing elit. Explicabo fuga sequi
-          tenetur doloribus.
+          {project.description || "No description available."}
         </h2>
 
-        <div className="mt-4">
+        <div className="my-4">
           <Link
-            href={"/"}
+            href={project.link || "#"}
             className="bg-black text-lg text-white px-4 py-2 rounded-full"
             target="_blank"
             rel="noopener noreferrer"
           >
             Visit Site
           </Link>
+
+          <div className="sm:hidden mt-4">
+            <img src={project.previewImage || ""} alt="project image" />
+          </div>
         </div>
       </div>
     </div>
