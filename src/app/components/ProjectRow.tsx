@@ -35,7 +35,7 @@ const ProjectRow: FC<Props> = ({
         showPreview ? "cursor-none" : "cursor-default"
       }`}
     >
-      <div className="grid grid-cols-2 transition-all ease-in-out duration-300 py-3 text-2xl">
+      <div className="grid grid-cols-2 transition-all ease-in-out duration-300 py-3 text-2xl lg:text-6xl">
         <div className="text-left py-2">{project.name}</div>
         <div className="text-right py-2">{project.year}</div>
       </div>
