@@ -31,7 +31,9 @@ const ProjectRow: FC<Props> = ({
       onMouseEnter={(e) => onMouseEnter(e, project.id)}
       onMouseLeave={(e) => onMouseLeave(e)}
       onClick={() => onClick(project.id)}
-      className={`border-b border-black hover:bg-black hover:text-white transition-all ease-in-out duration-300 ${
+      className={`border-b border-black ${
+        selectedProject !== project.id ? "hover:bg-black hover:text-white" : ""
+      }  transition-all ease-in-out duration-300 ${
         showPreview ? "cursor-none" : "cursor-default"
       }`}
     >
@@ -40,10 +42,18 @@ const ProjectRow: FC<Props> = ({
         <div className="text-right py-2">{project.year}</div>
       </div>
       <div
-        className={`transition-all ease-in-out duration-300 ${
-          selectedProject === project.id ? "h-[200px] bg-red-400" : "h-0"
+        className={`transition-all overflow-hidden ease-in-out duration-300 mt-2 mb-4 ${
+          selectedProject === project.id ? "h-[200px]" : "h-0"
         }`}
-      ></div>
+      >
+        <h2 className="w-3/4 text-4xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo
+          fuga sequi tenetur doloribus. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Explicabo fuga sequi tenetur doloribus. Lorem ipsum
+          dolor sit amet consectetur adipisicing elit. Explicabo fuga sequi
+          tenetur doloribus.
+        </h2>
+      </div>
     </div>
   );
 };
