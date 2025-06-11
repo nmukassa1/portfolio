@@ -30,7 +30,7 @@ const projects: Project[] = [
     id: 2,
     name: "Unwind",
     techStack: "React, Json Database",
-    year: 2024,
+    year: 2023,
     img: "blue",
   },
   {
