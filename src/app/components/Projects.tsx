@@ -66,6 +66,19 @@ function Projects() {
     });
   };
 
+  const handleRowPadding = (e: React.MouseEvent) => {
+    const firstChildElement = e.currentTarget.firstChild as HTMLElement;
+    const isEntered = e.type === "mouseenter";
+
+    if (firstChildElement && firstChildElement.classList) {
+      if (isEntered) {
+        firstChildElement.classList.add("px-4");
+      } else {
+        firstChildElement.classList.remove("px-4");
+      }
+    }
+  };
+
   return (
     <section
       id="projects"
@@ -95,20 +108,12 @@ function Projects() {
         <div
           key={project.id}
           onMouseEnter={(e) => {
-            // e.currentTarget.classList.add("px-4");
-            const firstChildElement = e.currentTarget.firstChild as HTMLElement;
-            if (firstChildElement && firstChildElement.classList) {
-              firstChildElement.classList.add("px-4");
-            }
+            handleRowPadding(e);
             // Show the image preview box
             setImageOpacity(1);
           }}
           onMouseLeave={(e) => {
-            // e.currentTarget.classList.add("px-4");
-            const firstChildElement = e.currentTarget.firstChild as HTMLElement;
-            if (firstChildElement && firstChildElement.classList) {
-              firstChildElement.classList.remove("px-4");
-            }
+            handleRowPadding(e);
             // Hide the image preview box
             setImageOpacity(0);
           }}
