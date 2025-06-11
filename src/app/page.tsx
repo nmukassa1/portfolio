@@ -1,4 +1,5 @@
 import About from "./components/About";
+import AnimatedPreviewBox from "./components/AnimatedPreviewBox";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
 
@@ -23,6 +24,7 @@ export default function Home() {
       </svg> */}
       <About />
       <Projects />
+      {/* <AnimatedPreviewBox /> */}
     </div>
   );
 }

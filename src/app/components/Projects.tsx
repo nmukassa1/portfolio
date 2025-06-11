@@ -1,5 +1,12 @@
 "use client";
 import { useEffect, useState } from "react";
+import {
+  motion,
+  useMotionValue,
+  useSpring,
+  useTransform,
+  useVelocity,
+} from "framer-motion";
 
 const projects = [
   {
@@ -41,35 +48,15 @@ const projects = [
 
 function Projects() {
   const [selectedProject, setSelectedProject] = useState<null | number>(null);
-  const [hoveredProjectId, setHoveredProjectId] = useState<null | number>(null);
-  const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
-  const [imageOpacity, setImageOpacity] = useState(0);
-  const imageSize = { width: 300, height: 200 };
+  const [hoveredProject, setHoveredProject] = useState<null | number>(null);
 
   const handleProjectClick = (id: number) => {
-    if (selectedProject === id) {
-      setSelectedProject(null); // Deselect if already selected
-      setImageOpacity(1); // Restore image preview
-    } else {
-      setSelectedProject(id); // Select the clicked project
-      setImageOpacity(0); // Hide image preview on expand
-    }
-  };
-
-  const handleImagePosition = (e: React.MouseEvent) => {
-    const offsetX = 150;
-    const offsetY = 100;
-
-    setImagePosition({
-      x: e.clientX - offsetX,
-      y: e.clientY - offsetY,
-    });
+    setSelectedProject((prev) => (prev === id ? null : id));
   };
 
   const handleRowPadding = (e: React.MouseEvent) => {
     const firstChildElement = e.currentTarget.firstChild as HTMLElement;
     const isEntered = e.type === "mouseenter";
-
     if (firstChildElement && firstChildElement.classList) {
       if (isEntered) {
         firstChildElement.classList.add("px-4");
@@ -84,63 +71,85 @@ function Projects() {
     return project ? project.img : "transparent";
   };
 
+  // Motion values
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  const springX = useSpring(mouseX, { stiffness: 200, damping: 30 });
+  const springY = useSpring(mouseY, { stiffness: 200, damping: 30 });
+
+  const velocityX = useVelocity(springX);
+  const velocityY = useVelocity(springY);
+
+  const skewX = useTransform(velocityX, [-1000, 1000], [-15, 15]);
+  const skewY = useTransform(velocityY, [-1000, 1000], [-15, 15]);
+
+  const [imageOpacity, setImageOpacity] = useState(0);
+  const [showPreview, setShowPreview] = useState(true); // For hiding on click
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseX.set(e.clientX - 150); // Center offset
+      mouseY.set(e.clientY - 100);
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [mouseX, mouseY]);
+
   return (
-    <section
-      id="projects"
-      className={`mt-7 relative ${
-        imageOpacity === 1 ? "cursor-none" : "cursor-default"
-      }`}
-      onMouseMove={handleImagePosition}
-    >
-      <div className="grid grid-cols-2 md:grid-cols-2 font-semibold border-b border-black text-2xl">
+    <section id="projects" className={`mt-7 relative`}>
+      <div className="grid grid-cols-2 font-semibold border-b border-black text-2xl">
         <div className="text-left py-2">Projects</div>
         <div className="text-right py-2">Year</div>
       </div>
 
-      {/* Image Preview Box */}
-      <div
-        className={`w-[300px] h-[200px] fixed pointer-events-none transition-transform duration-100 ease-in-out`}
-        style={{
-          top: `${imagePosition.y}px`,
-          left: `${imagePosition.x}px`,
-          opacity: imageOpacity,
-          backgroundColor: `${findProjectById(hoveredProjectId)}`,
-        }}
-      ></div>
+      {/* Fluid Image Preview Box */}
+      {showPreview && (
+        <motion.div
+          className="w-[300px] h-[200px] fixed pointer-events-none z-50"
+          style={{
+            left: springX,
+            top: springY,
+            opacity: imageOpacity,
+            skewX,
+            skewY,
+            backgroundColor: findProjectById(hoveredProject),
+            borderRadius: "30px",
+          }}
+          transition={{ type: "spring", stiffness: 300, damping: 40 }}
+        />
+      )}
 
-      {/* Rows */}
       {projects.map((project) => (
         <div
           key={project.id}
           onMouseEnter={(e) => {
-            if (selectedProject !== project.id) {
-              handleRowPadding(e);
-              setImageOpacity(1);
-              setHoveredProjectId(project.id);
-            }
+            handleRowPadding(e);
+            setHoveredProject(project.id);
+            setImageOpacity(1);
+            setShowPreview(true);
           }}
           onMouseLeave={(e) => {
             handleRowPadding(e);
-            if (selectedProject !== project.id) {
-              setImageOpacity(0);
-              setHoveredProjectId(null);
-            }
+            setImageOpacity(0);
+            setHoveredProject(null);
           }}
-          className="border-b border-black hover:bg-black hover:text-white transition-all ease-in-out duration-300"
+          onClick={() => {
+            handleProjectClick(project.id);
+            setShowPreview(false); // Hide preview box when clicking
+          }}
+          className={`border-b border-black hover:bg-black hover:text-white transition-all ease-in-out duration-300 ${
+            showPreview ? "cursor-none" : "cursor-default"
+          }`}
         >
-          {/* Project Name, Tech Stack, Year */}
-          <div
-            className="grid grid-cols-2 md:grid-cols-2 transition-all ease-in-out duration-300 py-3 text-2xl"
-            onClick={() => handleProjectClick(project.id)}
-          >
+          <div className="grid grid-cols-2 transition-all ease-in-out duration-300 py-3 text-2xl">
             <div className="text-left py-2">{project.name}</div>
             <div className="text-right py-2">{project.year}</div>
           </div>
 
-          {/* Project Description */}
+          {/* Expandable project detail */}
           <div
-            className={`bg-red-400 transition-all ease-in-out duration-300 ${
-              selectedProject === project.id ? "h-[200px]" : "h-0"
+            className={`transition-all ease-in-out duration-300 ${
+              selectedProject === project.id ? "h-[200px] bg-red-400" : "h-0"
             }`}
           ></div>
         </div>
