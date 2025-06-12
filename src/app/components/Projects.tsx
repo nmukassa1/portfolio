@@ -76,7 +76,7 @@ function Projects() {
   }, [mouseX, mouseY]);
 
   return (
-    <section id="projects" className="mt-7 relative">
+    <section id="projects-container" className="mt-7 relative">
       <div className="grid grid-cols-2 font-semibold border-b border-black text-2xl">
         <div className="text-left py-2">Projects</div>
         <div className="text-right py-2">Year</div>

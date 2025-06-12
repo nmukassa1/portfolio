@@ -34,7 +34,7 @@ const ProjectRow: FC<Props> = ({
       onMouseEnter={(e) => onMouseEnter(e, project.id)}
       onMouseLeave={(e) => onMouseLeave(e)}
       onClick={() => onClick(project.id)}
-      className={`border-b border-black  transition-all ease-in-out duration-300 ${
+      className={`project border-b border-black  transition-all ease-in-out duration-300 ${
         selectedProject !== project.id ? "hover:bg-black hover:text-white" : ""
       }  transition-all ease-in-out duration-300 ${
         showPreview ? "cursor-none" : "cursor-default"
