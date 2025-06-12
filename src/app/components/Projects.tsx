@@ -8,63 +8,7 @@ import {
 } from "framer-motion";
 import ImagePreview from "./ImagePreview";
 import ProjectRow from "./ProjectRow";
-
-type Project = {
-  id: number;
-  name: string;
-  year: number;
-  previewImage: string | undefined;
-  description?: string;
-  link: string;
-};
-
-const projects: Project[] = [
-  {
-    id: 1,
-    name: "Designspo",
-    year: 2025,
-    previewImage: "/designspo.png",
-    link: "https://designspo-webpage.vercel.app/",
-    description:
-      "An app to better manage your design inspirations into one central hub for easy access and organization. Replacing the need for multiple apps and bookmarks, Designspo allows you to save, categorize, and revisit your favorite designs effortlessly.",
-  },
-  {
-    id: 2,
-    name: "Unwind",
-    year: 2023,
-    previewImage: "/unwind.png",
-    link: "https://ecommerce-beryl-pi.vercel.app/",
-    description:
-      "Unwind is a project made to improve my skills of persisitng state management across pages in a time before I learnt about state management tools like Redux and databases.",
-  },
-  {
-    id: 3,
-    name: "Top 20",
-    year: 2022,
-    previewImage: "/movieApp.png",
-    link: "https://nmukassa1.github.io/movie-project-2/",
-    description:
-      "A movie app that showcases a few top films and shows of the week to watch by using the TMDB API to fetch data and display it in a user-friendly interface.",
-  },
-  {
-    id: 4,
-    name: "Spotify Clone",
-    year: 2022,
-    previewImage: "/spotifyClone.png",
-    link: "https://nmukassa1.github.io/spotifyclone/",
-    description:
-      "An early stage exploration into Javascript in my developer journey by building a Spotify clone that focuses on being able to play music, toggle play state, and navigate through the playlist.",
-  },
-  {
-    id: 5,
-    name: "Photosnap",
-    year: 2021,
-    previewImage: "/photosnap.png",
-    link: "https://nmukassa1.github.io/photosnap/index.html",
-    description:
-      "A Frontend Mentor Challenge that focuses on building a landing page for a photography company. It showcases my ability to create responsive designs and implement interactive elements using HTML, CSS, and JavaScript.",
-  },
-];
+import projects from "@/app/database";
 
 function Projects() {
   const [selectedProject, setSelectedProject] = useState<null | number>(null);
@@ -87,7 +31,25 @@ function Projects() {
   };
 
   const findPreviewImageById = (id: number | null) => {
-    return projects.find((p) => p.id === id)?.previewImage || undefined;
+    if (id === null) return undefined;
+
+    let left = 0;
+    let right = projects.length - 1;
+
+    while (left <= right) {
+      const mid = Math.floor((left + right) / 2);
+      const midProject = projects[mid];
+
+      if (midProject.id === id) {
+        return midProject.previewImage || undefined;
+      } else if (midProject.id < id) {
+        left = mid + 1;
+      } else {
+        right = mid - 1;
+      }
+    }
+
+    return undefined; // Return undefined if the id is not found
   };
 
   const mouseX = useMotionValue(0);
@@ -100,12 +62,17 @@ function Projects() {
   const skewY = useTransform(velocityY, [-1000, 1000], [-15, 15]);
 
   useEffect(() => {
+    const section = document.getElementById("projects");
+    if (!section) return;
+
     const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX - 150);
-      mouseY.set(e.clientY - 100);
+      const bounds = section.getBoundingClientRect();
+      mouseX.set(e.clientX - bounds.left - 150); // offset within Projects
+      mouseY.set(e.clientY - bounds.top - 100);
     };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
+
+    section.addEventListener("mousemove", handleMouseMove);
+    return () => section.removeEventListener("mousemove", handleMouseMove);
   }, [mouseX, mouseY]);
 
   return (

@@ -1,7 +1,7 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { FC } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 type Project = {
   id: number;
@@ -34,7 +34,7 @@ const ProjectRow: FC<Props> = ({
       onMouseEnter={(e) => onMouseEnter(e, project.id)}
       onMouseLeave={(e) => onMouseLeave(e)}
       onClick={() => onClick(project.id)}
-      className={`border-b border-black ${
+      className={`border-b border-black  transition-all ease-in-out duration-300 ${
         selectedProject !== project.id ? "hover:bg-black hover:text-white" : ""
       }  transition-all ease-in-out duration-300 ${
         showPreview ? "cursor-none" : "cursor-default"
@@ -65,7 +65,7 @@ const ProjectRow: FC<Props> = ({
             Visit Site
           </Link>
 
-          <div className="sm:hidden mt-4">
+          <div className=" md:w-[500px] lg:w-[700px] sm:ml-auto mt-4">
             <img src={project.previewImage || ""} alt="project image" />
           </div>
         </div>

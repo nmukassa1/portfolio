@@ -26,13 +26,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased px-4 pb-14`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
-        <Header />
+        {/* <Header /> */}
         {children}
-        {/* <footer className="bg-black h-[15vh] text-white absolute bottom-0 left-0 w-full">
-          <p>Nyah Mukassa</p>
-        </footer> */}
       </body>
     </html>
   );

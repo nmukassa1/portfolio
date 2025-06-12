@@ -1,30 +1,25 @@
+"use client";
 import About from "./components/About";
 import AnimatedPreviewBox from "./components/AnimatedPreviewBox";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
+import { gsap } from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// ScrollSmoother requires ScrollTrigger
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { useEffect } from "react";
+import Header from "./components/Header";
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export default function Home() {
   return (
-    <div>
-      {/* <Hero /> */}
-      {/* <svg viewBox="">
-        <text
-          x="50%"
-          y="50%"
-          dominantBaseline="middle"
-          textAnchor="middle"
-          fontSize="28"
-          fill="currentColor"
-        >
-          <tspan>N</tspan>
-          <tspan>Y</tspan>
-          <tspan>A</tspan>
-          <tspan>H</tspan>
-        </text>
-      </svg> */}
-      <About />
-      <Projects />
-      {/* <AnimatedPreviewBox /> */}
+    <div id="scroll-wrapper" className="px-4 pb-14">
+      <div id="scroll-content" className="relative">
+        <Header />
+        <About />
+        <Projects />
+      </div>
     </div>
   );
 }
