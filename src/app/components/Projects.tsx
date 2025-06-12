@@ -89,7 +89,6 @@ function Projects() {
         top={springY}
         skewX={skewX}
         skewY={skewY}
-        // bgColor={findPreviewImageById(hoveredProject)}
         previewImage={findPreviewImageById(hoveredProject)}
       />
 

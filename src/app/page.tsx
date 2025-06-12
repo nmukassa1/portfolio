@@ -14,12 +14,10 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 export default function Home() {
   return (
-    <div id="scroll-wrapper" className="px-4 pb-14">
-      <div id="scroll-content" className="relative">
-        <Header />
-        <About />
-        <Projects />
-      </div>
+    <div>
+      <Header />
+      <About />
+      <Projects />
     </div>
   );
 }
