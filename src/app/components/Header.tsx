@@ -13,7 +13,7 @@ function Header() {
         </Link>
         <Link
           id="contact-link"
-          href=""
+          href="mailto:nmukassa1@gmail.com"
           className="header-link text-2xl font-bold hover:text-gray-400"
         >
           Contact

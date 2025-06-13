@@ -8,9 +8,8 @@ header {
   height: var(--headerHeight);
 }
 
-#hero {
+#home-page {
   height: calc(100dvh - var(--headerHeight));
-  overflow: hidden;
 }
 
 /* #image-preview {

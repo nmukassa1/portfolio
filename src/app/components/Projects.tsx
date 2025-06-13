@@ -99,6 +99,7 @@ function Projects() {
           selectedProject={selectedProject}
           showPreview={showPreview}
           onMouseEnter={(e, id) => {
+            if (navigator.maxTouchPoints > 0) return; // Prevent hover effects on touch devices
             handleRowPadding(e);
             setHoveredProject(id);
             setImageOpacity(1);

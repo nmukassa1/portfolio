@@ -18,7 +18,7 @@ export default function Home() {
     tl.fromTo(
       headerLinks,
       { opacity: 0 },
-      { opacity: 1, duration: 0.7, delay: 0.5 }
+      { opacity: 1, duration: 0.5, delay: 0.8 }
     )
       .fromTo(
         aboutParagraph,
@@ -35,13 +35,17 @@ export default function Home() {
       .fromTo(
         projects,
         { opacity: 0, y: -20 },
-        { opacity: 1, y: 0, duration: 0.2, stagger: 0.2 },
-        "-=0.3"
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.2,
+          stagger: 0.1,
+        },
+        "<"
       );
   }, []);
   return (
-    <div className="px-4 pb-14">
-      <Header />
+    <div id="home-page" className="">
       <About />
       <Projects />
     </div>
