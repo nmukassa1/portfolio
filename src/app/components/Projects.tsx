@@ -62,7 +62,7 @@ function Projects() {
   const skewY = useTransform(velocityY, [-1000, 1000], [-15, 15]);
 
   useEffect(() => {
-    const section = document.getElementById("projects");
+    const section = document.getElementById("projects-container");
     if (!section) return;
 
     const handleMouseMove = (e: MouseEvent) => {

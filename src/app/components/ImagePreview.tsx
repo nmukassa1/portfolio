@@ -27,7 +27,7 @@ const ImagePreview: FC<Props> = ({
 
   return (
     <motion.div
-      className="w-[500px] h-[300px] absolute pointer-events-none z-50 "
+      className="w-full lg:w-[500px] h-[300px] absolute pointer-events-none z-50 "
       style={{
         left,
         top,

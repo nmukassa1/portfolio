@@ -31,13 +31,19 @@ const ProjectRow: FC<Props> = ({
 }) => {
   return (
     <div
-      onMouseEnter={(e) => onMouseEnter(e, project.id)}
+      onMouseEnter={(e) => {
+        if (selectedProject !== project.id) {
+          onMouseEnter(e, project.id);
+        }
+      }}
       onMouseLeave={(e) => onMouseLeave(e)}
       onClick={() => onClick(project.id)}
       className={`project border-b border-black  transition-all ease-in-out duration-300 ${
         selectedProject !== project.id ? "hover:bg-black hover:text-white" : ""
       }  transition-all ease-in-out duration-300 ${
-        showPreview ? "cursor-none" : "cursor-default"
+        showPreview && selectedProject !== project.id
+          ? "cursor-none"
+          : "cursor-default"
       }`}
     >
       <div className="grid grid-cols-2 transition-all ease-in-out duration-300 py-3 text-2xl sm:text-6xl">
@@ -47,7 +53,7 @@ const ProjectRow: FC<Props> = ({
 
       {/* Project details */}
       <div
-        className={`transition-all overflow-hidden ease-in-out duration-300 ${
+        className={`transition-all overflow-hidden ease-in-out duration-300  ${
           selectedProject === project.id ? "max-h-[1000px] pb-6 " : "max-h-0"
         }`}
       >
