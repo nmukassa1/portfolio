@@ -6,8 +6,10 @@ function Header() {
       <nav className="w-full flex items-center justify-between">
         <Link
           id="linkedIn-link"
-          href="/"
+          href="https://www.linkedin.com/in/nyah-mukassa-601b47213/"
           className="header-link text-2xl font-bold hover:text-gray-400"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Linkedin
         </Link>
