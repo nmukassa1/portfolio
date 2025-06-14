@@ -3,7 +3,6 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import { gsap } from "gsap";
 import { useEffect } from "react";
-import Header from "./components/Header";
 
 export default function Home() {
   useEffect(() => {
