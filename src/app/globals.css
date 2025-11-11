@@ -12,6 +12,26 @@ header {
   height: calc(100dvh - var(--headerHeight));
 }
 
+/* Initial hidden state for animated elements - prevents flash before GSAP takes over */
+.header-link {
+  opacity: 0;
+}
+
+#aboutParagraph {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+#projects-container {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.project {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
 /* #image-preview {
   transition: opacity 0.4s ease-in-out, transform 0.3s ease-in-out;
 } */
