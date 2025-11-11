@@ -15,36 +15,32 @@ type Project = {
 type Props = {
   project: Project;
   selectedProject: number | null;
-  showPreview: boolean;
-  onMouseEnter: (e: React.MouseEvent, id: number) => void;
-  onMouseLeave: (e: React.MouseEvent) => void;
+  // showPreview: boolean;
+  // onMouseEnter: (e: React.MouseEvent, id: number) => void;
+  // onMouseLeave: (e: React.MouseEvent) => void;
   onClick: (id: number) => void;
 };
 
 const ProjectRow: FC<Props> = ({
   project,
   selectedProject,
-  showPreview,
-  onMouseEnter,
-  onMouseLeave,
+  // showPreview,
+  // onMouseEnter,
+  // onMouseLeave,
   onClick,
 }) => {
   return (
     <div
-      onMouseEnter={(e) => {
-        if (selectedProject !== project.id) {
-          onMouseEnter(e, project.id);
-        }
-      }}
-      onMouseLeave={(e) => onMouseLeave(e)}
+      // onMouseEnter={(e) => {
+      //   if (selectedProject !== project.id) {
+      //     onMouseEnter(e, project.id);
+      //   }
+      // }}
+      // onMouseLeave={(e) => onMouseLeave(e)}
       onClick={() => onClick(project.id)}
       className={`project border-b border-black  transition-all ease-in-out duration-300 ${
         selectedProject !== project.id ? "hover:bg-black hover:text-white" : ""
-      }  transition-all ease-in-out duration-300 ${
-        showPreview && selectedProject !== project.id
-          ? "cursor-none"
-          : "cursor-default"
-      }`}
+      }  transition-all ease-in-out duration-300`}
     >
       <div className="grid grid-cols-2 transition-all ease-in-out duration-300 py-3 text-2xl sm:text-6xl">
         <div className="text-left py-2">{project.name}</div>

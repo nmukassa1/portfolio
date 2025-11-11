@@ -4,7 +4,7 @@ function Header() {
   return (
     <header className="flex justify-between items-center sticky top-0 bg-white z-50">
       <nav className="w-full flex items-center justify-between">
-        <Link
+        {/* <Link
           id="linkedIn-link"
           href="https://www.linkedin.com/in/nyah-mukassa-601b47213/"
           className="header-link text-2xl font-bold hover:text-gray-400"
@@ -12,11 +12,11 @@ function Header() {
           rel="noopener noreferrer"
         >
           Linkedin
-        </Link>
+        </Link> */}
         <Link
           id="contact-link"
           href="mailto:nmukassa1@gmail.com"
-          className="header-link text-2xl font-bold hover:text-gray-400"
+          className="header-link text-2xl font-bold hover:text-gray-400 ml-auto"
         >
           Contact
         </Link>
